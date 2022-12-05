@@ -112,19 +112,19 @@ class RestClient(object):
 
     # Returns a hard cap for the maximum number of retries allowed (10)
     def MAX_REQUEST_RETRIES(self):
-        return 10
+        return 100
 
     # Returns the maximum amount of jitter to introduce in milliseconds (100ms)
     def MAX_REQUEST_RETRY_JITTER(self):
-        return 100
+        return 5000
 
     # Returns the maximum delay window allowed (1000ms)
     def MAX_REQUEST_RETRY_DELAY(self):
-        return 1000
+        return 30000
 
     # Returns the minimum delay window allowed (100ms)
     def MIN_REQUEST_RETRY_DELAY(self):
-        return 100
+        return 10000
 
     def get(self, url, params=None, headers=None):
         request_headers = self.base_headers.copy()
